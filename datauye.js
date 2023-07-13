@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const databaseName = 'nama-database';
 
 // Mengganti 'mongodb://localhost:27017/' dengan URL MongoDB yang sesuai
-const mongoURL = `mongodb+srv://alfimuharom65:cumik130303@cluster0.zugjhfo.mongodb.net/?retryWrites=true&w=majority`;
+const mongoURL = `mongodb+srv://raihanwekape:28januari@raihan.b4hapaw.mongodb.net/`;
 
 mongoose.connect(mongoURL, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => {
