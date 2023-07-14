@@ -14,11 +14,11 @@ router.get('/products', async (req, res) => {
 });
 
 // Rute untuk mendapatkan detail produk berdasarkan ID
-router.get('/products/:{id}', async (req, res) => { 
+router.get('/products/:id', async (req, res) => { 
     try {
         const productId = req.params.id;
         console.log(productId);
-        const product = await Product.findById();
+        const product = await Product.findById(productId);
         if (!product) {
             return res.status(404).json({ error: 'Product not found' });
         }
@@ -60,7 +60,7 @@ router.post('/products', upload.single('image'), async (req, res) => {
 
 
 // Rute untuk memperbarui produk berdasarkan ID
-router.put('/products/:{id}', async (req, res) => {
+router.put('/products/:id', async (req, res) => {
     try {
         const productId = req.params.id;
         console.log(productId);
@@ -77,7 +77,7 @@ router.put('/products/:{id}', async (req, res) => {
 });
 
 // Rute untuk menghapus produk berdasarkan ID
-router.delete('/products/', async (req, res) => {
+router.delete('/products/:id', async (req, res) => {
     try {
         const productId = req.params.id;
         console.log(productId);
